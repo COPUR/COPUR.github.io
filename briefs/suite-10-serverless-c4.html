@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suite 10 Architecture Brief — Multi-Tenant Serverless News &amp; Observability</title>
+  <style>
+    :root { --bg:#0b1020; --surface:#121933; --border:#232d54; --text:#e6ebf5; --muted:#9aa7c7; --accent:#5b8cff; --green:#3ddc97; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; padding:2.25rem 1.25rem; }
+    .wrap { max-width:900px; margin:0 auto; }
+    .back { display:inline-block; color:var(--accent); text-decoration:none; margin-bottom:1.25rem; font-size:0.9rem; }
+    .back:hover { text-decoration:underline; }
+    .card { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.6rem; margin-bottom:1.25rem; }
+    h1 { font-size:1.65rem; margin-bottom:0.4rem; }
+    .sub { color:var(--green); font-size:0.9rem; margin-bottom:1rem; }
+    h2 { font-size:1.1rem; margin:1.25rem 0 0.6rem; color:#fff; }
+    p, li { color:var(--muted); font-size:0.95rem; }
+    ul { padding-left:1.25rem; display:flex; flex-direction:column; gap:0.4rem; }
+    pre { background:#090d1a; border:1px solid var(--border); border-radius:8px; padding:1rem; overflow-x:auto; color:#cfe0ff; font-size:0.84rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../index.html">← Back to Enterprise Product Suites</a>
+    <div class="card">
+      <h1>Suite 10 Architecture Brief — Multi-Tenant Serverless News &amp; Observability</h1>
+      <div class="sub">Suite 10 · Governed Private Enterprise Baseline · Multi-Tenant Serverless SaaS Platform</div>
+      <p>Decoupled cleanly from EV CAN/telemetry (Suite 9), Suite 10 operates a multi-tenant Go/AWS Serverless workflow platform (private) alongside local-first Node.js 20+ agents and an independently deployable public dashboard microservice (COPUR/dashboard-service).</p>
+      <h2>Architecture Highlights</h2>
+      <ul><li>Go/AWS Serverless workflow core governed by Architecture Decision Records (ADR-0021 baseline).</li><li>Idempotent start-run replay guard validating tenant scope and idempotency-key naming before execution.</li><li>Standalone Node.js/Prisma/Docker dashboard-service maintains an independent lifecycle from private ingestion agents.</li></ul>
+      <h2>Guardrails &amp; Compliance</h2>
+      <ul><li>Private repositories (daily-ev-news-serverless-go, daily-ev-news-agent, daily-news-agent) remain unlinked; public evidence anchors to dashboard-service and this redacted brief.</li><li>Zero tenant data, API credentials, or internal handles appear in public artifacts.</li></ul>
+      <h2>Architecture Diagram (Mermaid Source)</h2>
+      <pre>flowchart LR
+  T[Multi-Tenant Triggers] --&gt; GO[Go / AWS Serverless Core PRIVATE]
+  AG[Node.js 20+ Ingestion Agents PRIVATE] --&gt; GO
+  GO --&gt; DB[(PostgreSQL / Prisma)]
+  DB --&gt; DASH[dashboard-service PUBLIC]</pre>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,6 +1,22 @@
+# OS & editor artifacts
 .DS_Store
+*.swp
+
+# Secrets & environment files
 .env
 .env.*
 !.env.example
+
+# Logs & backups
 *.log
 *.bak
+
+# Python stdlib compiler & test caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/

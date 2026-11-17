@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suite 5 Architecture Brief — FinTechBankX Core &amp; MasruFi Sharia Finance Engine</title>
+  <style>
+    :root { --bg:#0b1020; --surface:#121933; --border:#232d54; --text:#e6ebf5; --muted:#9aa7c7; --accent:#5b8cff; --green:#3ddc97; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; padding:2.25rem 1.25rem; }
+    .wrap { max-width:900px; margin:0 auto; }
+    .back { display:inline-block; color:var(--accent); text-decoration:none; margin-bottom:1.25rem; font-size:0.9rem; }
+    .back:hover { text-decoration:underline; }
+    .card { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.6rem; margin-bottom:1.25rem; }
+    h1 { font-size:1.65rem; margin-bottom:0.4rem; }
+    .sub { color:var(--green); font-size:0.9rem; margin-bottom:1rem; }
+    h2 { font-size:1.1rem; margin:1.25rem 0 0.6rem; color:#fff; }
+    p, li { color:var(--muted); font-size:0.95rem; }
+    ul { padding-left:1.25rem; display:flex; flex-direction:column; gap:0.4rem; }
+    pre { background:#090d1a; border:1px solid var(--border); border-radius:8px; padding:1rem; overflow-x:auto; color:#cfe0ff; font-size:0.84rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../index.html">← Back to Enterprise Product Suites</a>
+    <div class="card">
+      <h1>Suite 5 Architecture Brief — FinTechBankX Core &amp; MasruFi Sharia Finance Engine</h1>
+      <div class="sub">Suite 5 · Public Reference Baseline · Core Banking, Lending &amp; Islamic Finance</div>
+      <p>Suite 5 pairs public core-banking service boundaries (loan-lifecycle-core, accounts-ledger-service, kyc-core) with two private enterprise engines: enterprise-loan-management-system and MasruFi_Framework (Sharia-compliant financing contracts integrated with crypto-banking concepts).</p>
+      <h2>Architecture Highlights</h2>
+      <ul><li>Strict Domain-Driven Design and Hexagonal Architecture isolating financial contract invariants from persistence and transport.</li><li>MasruFi_Framework encodes Istisna, Ijarah, and Qard Hassan contract lifecycles alongside tokenized finance primitives.</li><li>Public service modules expose clean domain boundaries for lending, double-entry ledger, and customer KYC.</li></ul>
+      <h2>Guardrails &amp; Compliance</h2>
+      <ul><li>MasruFi_Framework and enterprise-loan-management-system are verified PRIVATE repositories; zero private endpoints or code are exposed.</li><li>Public FinTechBankX core services link directly to verified PUBLIC repositories.</li></ul>
+      <h2>Architecture Diagram (Mermaid Source)</h2>
+      <pre>flowchart TB
+  CORE[FinTechBankX Core Suite 5] --&gt; L[loan-lifecycle-core PUBLIC]
+  CORE --&gt; A[accounts-ledger-service PUBLIC]
+  CORE --&gt; K[kyc-core PUBLIC]
+  CORE --&gt; M[MasruFi_Framework PRIVATE: Istisna / Ijarah / Qard Hassan]</pre>
+    </div>
+  </div>
+</body>
+</html>

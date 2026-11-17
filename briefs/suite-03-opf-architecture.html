@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suite 3 Architecture Brief — OPF Agentive Open Finance (BaaS) Layer</title>
+  <style>
+    :root { --bg:#0b1020; --surface:#121933; --border:#232d54; --text:#e6ebf5; --muted:#9aa7c7; --accent:#5b8cff; --green:#3ddc97; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; padding:2.25rem 1.25rem; }
+    .wrap { max-width:900px; margin:0 auto; }
+    .back { display:inline-block; color:var(--accent); text-decoration:none; margin-bottom:1.25rem; font-size:0.9rem; }
+    .back:hover { text-decoration:underline; }
+    .card { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.6rem; margin-bottom:1.25rem; }
+    h1 { font-size:1.65rem; margin-bottom:0.4rem; }
+    .sub { color:var(--green); font-size:0.9rem; margin-bottom:1rem; }
+    h2 { font-size:1.1rem; margin:1.25rem 0 0.6rem; color:#fff; }
+    p, li { color:var(--muted); font-size:0.95rem; }
+    ul { padding-left:1.25rem; display:flex; flex-direction:column; gap:0.4rem; }
+    pre { background:#090d1a; border:1px solid var(--border); border-radius:8px; padding:1rem; overflow-x:auto; color:#cfe0ff; font-size:0.84rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../index.html">← Back to Enterprise Product Suites</a>
+    <div class="card">
+      <h1>Suite 3 Architecture Brief — OPF Agentive Open Finance (BaaS) Layer</h1>
+      <div class="sub">Suite 3 · Public Reference Baseline · Agentive Open Finance &amp; BaaS Initiative</div>
+      <p>OPF acts as an Agentive Translation Layer between Open Finance / BaaS channels and incumbent core-banking constraints. Public V2 reference documentation (OPF-Agentive-Platform) is complemented by private V3/V4 baselines adding regulated architecture backlogs and AI data controls.</p>
+      <h2>Architecture Highlights</h2>
+      <ul><li>Temporal-orchestrated stateful agent workflows replacing brittle static state machines.</li><li>Model Cascades (MoE) routing simple intents to low-latency SLMs before invoking foundation models.</li><li>pgvector semantic caching layer designed to bypass redundant LLM inference on recurring intent embeddings.</li></ul>
+      <h2>Guardrails &amp; Compliance</h2>
+      <ul><li>Cross-references COPUR/ai-agent-protocols (Google ADK, MCP, A2A, Quarkus, LangChain4j) without duplicating canonical ownership.</li><li>V3/V4 enterprise variants remain in private repositories while V2 codex and diagrams are publicly inspectable.</li></ul>
+      <h2>Architecture Diagram (Mermaid Source)</h2>
+      <pre>flowchart LR
+  CH[Open Finance Channel] --&gt; SC[pgvector Semantic Cache]
+  SC --&gt;|Cache Miss| MC[Model Cascade Router]
+  MC --&gt; WF[Temporal Durable Workflow]
+  WF --&gt; CORE[Incumbent Core Banking]</pre>
+    </div>
+  </div>
+</body>
+</html>

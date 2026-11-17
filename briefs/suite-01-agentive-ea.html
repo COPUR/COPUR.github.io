@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suite 1 Architecture Brief — The Deterministic Sandwich (Agent = Model + Harness)</title>
+  <style>
+    :root { --bg:#0b1020; --surface:#121933; --border:#232d54; --text:#e6ebf5; --muted:#9aa7c7; --accent:#5b8cff; --green:#3ddc97; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; padding:2.25rem 1.25rem; }
+    .wrap { max-width:900px; margin:0 auto; }
+    .back { display:inline-block; color:var(--accent); text-decoration:none; margin-bottom:1.25rem; font-size:0.9rem; }
+    .back:hover { text-decoration:underline; }
+    .card { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.6rem; margin-bottom:1.25rem; }
+    h1 { font-size:1.65rem; margin-bottom:0.4rem; }
+    .sub { color:var(--green); font-size:0.9rem; margin-bottom:1rem; }
+    h2 { font-size:1.1rem; margin:1.25rem 0 0.6rem; color:#fff; }
+    p, li { color:var(--muted); font-size:0.95rem; }
+    ul { padding-left:1.25rem; display:flex; flex-direction:column; gap:0.4rem; }
+    pre { background:#090d1a; border:1px solid var(--border); border-radius:8px; padding:1rem; overflow-x:auto; color:#cfe0ff; font-size:0.84rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../index.html">← Back to Enterprise Product Suites</a>
+    <div class="card">
+      <h1>Suite 1 Architecture Brief — The Deterministic Sandwich (Agent = Model + Harness)</h1>
+      <div class="sub">Suite 1 · Governed Private Enterprise Baseline · Enterprise Architecture &amp; AI Governance</div>
+      <p>Financial institutions cannot let raw LLMs execute unvalidated core-banking mutations. These private frameworks wrap locally hosted or governed models inside deterministic Java (Spring Boot) and TypeScript harnesses where models emit schema/Zod-validated JSON only and deterministic code enforces every policy and side effect.</p>
+      <h2>Architecture Highlights</h2>
+      <ul><li>Five governance agents + seven domain developer agents aligned with TOGAF ADM and BDAT enterprise layering.</li><li>DPoP-authenticated agent gateway paired with W3C Trace Context (traceparent/tracestate) and streaming DLP via Security SLMs.</li><li>Compute-aware routing directing routine classification to fast SLMs and complex synthesis to larger local models, backed by mock-mode offline test suites.</li></ul>
+      <h2>Guardrails &amp; Compliance</h2>
+      <ul><li>Regulatory alignment mapped against CBUAE 3/2025 data residency controls and PCI-DSS v4 requirements.</li><li>Public governance anchors verified in COPUR/ai-governance-framework, COPUR/architecture-as-code, COPUR/common-cloud-controls, and COPUR/ai-agent-protocols.</li></ul>
+      <h2>Architecture Diagram (Mermaid Source)</h2>
+      <pre>flowchart LR
+  U[Architect / Intent] --&gt; GW[DPoP Agent Gateway + DLP]
+  GW --&gt; H[Deterministic Harness: Java / TS]
+  H --&gt;|Schema/Zod Prompt| M[Local LLM / SLM]
+  M --&gt;|Strict JSON Only| H
+  H --&gt;|Policy + Side Effects| CB[Core Banking / ADR Backlog]</pre>
+    </div>
+  </div>
+</body>
+</html>

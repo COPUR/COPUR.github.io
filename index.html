@@ -4,31 +4,45 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ali Çopur (@COPUR) — Enterprise Product Suites</title>
+  <link rel="canonical" href="https://copur.github.io/" />
+  <meta name="description" content="Enterprise software architecture and product portfolio across Agentic AI Governance, Agentic Open Finance (BaaS), Core Banking &amp; Camunda BPO, EV Plug &amp; Charge Roaming, and Serverless SaaS." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://copur.github.io/" />
+  <meta property="og:site_name" content="COPUR Enterprise Portfolio" />
+  <meta property="og:title" content="Ali Çopur (@COPUR) — Enterprise Product Suites" />
+  <meta property="og:description" content="Enterprise software architecture and product portfolio across Agentic AI Governance, Agentic Open Finance (BaaS), Core Banking &amp; Camunda BPO, EV Plug &amp; Charge Roaming, and Serverless SaaS." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Ali Çopur (@COPUR) — Enterprise Product Suites" />
+  <meta name="twitter:description" content="Enterprise software architecture and product portfolio across Agentic AI Governance, Agentic Open Finance (BaaS), Core Banking &amp; Camunda BPO, EV Plug &amp; Charge Roaming, and Serverless SaaS." />
   <style>
     :root {
       --bg: #0b1020;
       --surface: #121933;
+      --surface-alt: #0f162d;
       --border: #232d54;
       --text: #e6ebf5;
       --muted: #9aa7c7;
       --accent: #5b8cff;
-      --accent-soft: rgba(91, 140, 255, 0.12);
+      --accent-soft: rgba(91, 140, 255, 0.14);
       --green: #3ddc97;
+      --green-soft: rgba(61, 220, 151, 0.12);
       --amber: #f5b942;
+      --amber-soft: rgba(245, 185, 66, 0.12);
+      --cyan: #4cd4e8;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
-      padding: 2.5rem 1.25rem;
+      line-height: 1.55;
+      padding: 2.25rem 1.25rem 3rem;
     }
-    .container { max-width: 1160px; margin: 0 auto; }
+    .container { max-width: 1200px; margin: 0 auto; }
     header {
       border-bottom: 1px solid var(--border);
-      padding-bottom: 2rem;
-      margin-bottom: 2.5rem;
+      padding-bottom: 1.75rem;
+      margin-bottom: 1.75rem;
     }
     .badge {
       display: inline-block;
@@ -39,11 +53,11 @@
       border-radius: 999px;
       font-size: 0.8rem;
       font-weight: 600;
-      margin-bottom: 0.9rem;
+      margin-bottom: 0.85rem;
     }
-    h1 { font-size: 2.2rem; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
-    .subtitle { color: var(--muted); font-size: 1.05rem; max-width: 820px; }
-    .links { margin-top: 1.2rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+    h1 { font-size: 2.15rem; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+    .subtitle { color: var(--muted); font-size: 1.02rem; max-width: 860px; }
+    .links { margin-top: 1.15rem; display: flex; gap: 0.85rem; flex-wrap: wrap; }
     .links a {
       color: var(--text);
       text-decoration: none;
@@ -51,46 +65,198 @@
       border: 1px solid var(--border);
       padding: 0.45rem 0.9rem;
       border-radius: 8px;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
     }
     .links a:hover { border-color: var(--accent); }
-    h2 { font-size: 1.45rem; margin: 2.2rem 0 1rem; }
+    .controls {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .filter-bar { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+    .filter-btn {
+      background: var(--surface);
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 0.4rem 0.8rem;
+      border-radius: 8px;
+      font-size: 0.84rem;
+      cursor: pointer;
+    }
+    .filter-btn.is-active {
+      background: var(--accent-soft);
+      color: var(--text);
+      border-color: var(--accent);
+      font-weight: 600;
+    }
+    .secondary-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .inputs { display: flex; flex-wrap: wrap; gap: 0.65rem; flex: 1; }
+    select, input[type="search"] {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.42rem 0.75rem;
+      font-size: 0.86rem;
+    }
+    input[type="search"] { min-width: 240px; flex: 1; max-width: 360px; }
+    #filter-status { color: var(--muted); font-size: 0.85rem; }
+    h2 { font-size: 1.4rem; margin: 1.5rem 0 1rem; }
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
       gap: 1.25rem;
     }
     .card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 1.4rem;
+      padding: 1.3rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      gap: 0.85rem;
     }
-    .card h3 { font-size: 1.1rem; margin-bottom: 0.35rem; color: #fff; }
-    .target { font-size: 0.82rem; color: var(--green); margin-bottom: 0.75rem; font-weight: 500; }
-    .card p { color: var(--muted); font-size: 0.92rem; margin-bottom: 1rem; }
-    .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.9rem; }
-    .tag {
-      font-size: 0.75rem;
+    .card.is-hidden { display: none; }
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.55rem;
+    }
+    .domain-chip {
+      font-size: 0.72rem;
+      color: var(--muted);
       background: rgba(255,255,255,0.04);
       border: 1px solid var(--border);
       padding: 0.15rem 0.5rem;
       border-radius: 6px;
+    }
+    .maturity-badge {
+      font-size: 0.72rem;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid rgba(91, 140, 255, 0.35);
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+    .card h3 { font-size: 1.07rem; margin-bottom: 0.35rem; color: #fff; }
+    .sponsor-badge { font-size: 0.8rem; color: var(--green); margin-bottom: 0.5rem; font-weight: 600; }
+    .sponsor-regulator { color: var(--cyan); }
+    .sponsor-stakeholder { color: var(--amber); }
+    .boundary-note {
+      font-size: 0.78rem;
+      color: var(--muted);
+      border-left: 2px solid var(--border);
+      padding-left: 0.6rem;
+      margin-bottom: 0.65rem;
+    }
+    .summary { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.8rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.38rem; margin-bottom: 0.8rem; }
+    .tag {
+      font-size: 0.74rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      padding: 0.14rem 0.48rem;
+      border-radius: 6px;
       color: var(--muted);
     }
-    .repos { font-size: 0.84rem; border-top: 1px solid var(--border); padding-top: 0.75rem; }
-    .repos a { color: var(--accent); text-decoration: none; margin-right: 0.65rem; display: inline-block; margin-bottom: 0.25rem; }
-    .repos a:hover { text-decoration: underline; }
-    .private-note { color: var(--amber); font-size: 0.78rem; display: block; margin-top: 0.3rem; }
+    .proof-box {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.6rem 0.75rem;
+    }
+    .proof-heading { font-size: 0.73rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); margin-bottom: 0.35rem; }
+    .proof-links { display: flex; flex-direction: column; gap: 0.3rem; }
+    .proof-link { font-size: 0.82rem; color: var(--text); text-decoration: none; }
+    .proof-link:hover { color: var(--accent); text-decoration: underline; }
+    .proof-type {
+      display: inline-block;
+      font-size: 0.7rem;
+      background: var(--green-soft);
+      color: var(--green);
+      padding: 0.05rem 0.4rem;
+      border-radius: 4px;
+      margin-right: 0.35rem;
+    }
+    .repos { border-top: 1px solid var(--border); padding-top: 0.75rem; display: flex; flex-direction: column; gap: 0.4rem; }
+    .bucket { display: flex; flex-wrap: wrap; gap: 0.38rem; }
+    .pill {
+      font-size: 0.76rem;
+      padding: 0.16rem 0.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .pill-public {
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid rgba(91, 140, 255, 0.25);
+    }
+    .pill-public:hover { border-color: var(--accent); text-decoration: underline; }
+    .pill-crossref {
+      color: var(--cyan);
+      background: rgba(76, 212, 232, 0.1);
+      border: 1px solid rgba(76, 212, 232, 0.25);
+    }
+    .xref { opacity: 0.85; font-size: 0.7rem; }
+    .pill-private {
+      color: var(--amber);
+      background: var(--amber-soft);
+      border: 1px solid rgba(245, 185, 66, 0.25);
+    }
+    .pill-design {
+      color: var(--muted);
+      background: rgba(255,255,255,0.04);
+      border: 1px dashed var(--border);
+    }
+    #empty-state {
+      background: var(--surface);
+      border: 1px dashed var(--border);
+      border-radius: 10px;
+      padding: 1.5rem;
+      text-align: center;
+      color: var(--muted);
+      margin-top: 1rem;
+    }
+    .standards-section { margin-top: 2.5rem; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      font-size: 0.88rem;
+    }
+    th, td {
+      text-align: left;
+      padding: 0.75rem 0.9rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    th { background: var(--surface-alt); color: #fff; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em; }
+    td code { color: var(--accent); font-size: 0.8rem; }
     footer {
-      margin-top: 3rem;
-      padding-top: 1.5rem;
+      margin-top: 2.5rem;
+      padding-top: 1.25rem;
       border-top: 1px solid var(--border);
       color: var(--muted);
-      font-size: 0.85rem;
+      font-size: 0.83rem;
       text-align: center;
     }
   </style>
@@ -101,206 +267,398 @@
       <span class="badge">Enterprise Software Architect &amp; Product Engineering Leader</span>
       <h1>Ali Çopur (@COPUR)</h1>
       <p class="subtitle">
-        Enterprise-grade software product suites across Agentic AI-Driven Enterprise Architecture,
-        Agentic Open Finance (BaaS), Core Banking &amp; Process Orchestration (Camunda 8.10), and EV Roaming &amp; Mobility.
+        Enterprise-grade product suites across Agentic AI-Driven Enterprise Architecture,
+        Agentic Open Finance (BaaS), Core Banking &amp; Process Orchestration (Camunda 8.10),
+        Separately Sponsored EV PnC Consents &amp; Wallets, and Multi-Tenant Serverless SaaS.
       </p>
       <div class="links">
         <a href="https://github.com/COPUR">GitHub Profile</a>
         <a href="https://github.com/COPUR/COPUR/blob/main/PROJECTS.md">Full Product Catalog</a>
+        <a href="https://github.com/COPUR/COPUR/discussions">Contact / Discussions</a>
       </div>
     </header>
 
-    <h2>Enterprise Product Suites</h2>
-    <div class="grid">
-      <article class="card">
+    <section class="controls" aria-label="Filter product suites">
+      <div class="filter-bar">
+        <button type="button" class="filter-btn is-active" data-domain-filter="ALL" aria-pressed="true">All (10)</button><button type="button" class="filter-btn" data-domain-filter="D1_AGENTIC_AI" aria-pressed="false">Agentic AI &amp; Governance (2)</button><button type="button" class="filter-btn" data-domain-filter="D2_OPEN_FINANCE_CORE" aria-pressed="false">Open Finance &amp; Core Banking (4)</button><button type="button" class="filter-btn" data-domain-filter="D3_EV_MOBILITY" aria-pressed="false">EV Mobility &amp; Telemetry (3)</button><button type="button" class="filter-btn" data-domain-filter="D4_SERVERLESS_INTELLIGENCE" aria-pressed="false">Serverless Intelligence (1)</button>
+      </div>
+      <div class="secondary-controls">
+        <div class="inputs">
+          <select id="maturity-filter" aria-label="Filter by maturity tier">
+            <option value="ALL">All Maturity Tiers</option><option value="RUNNABLE_K8S_CLI_DEMO">Runnable K8s / CLI Demo</option><option value="PUBLIC_REFERENCE_BASELINE">Public Reference Baseline</option><option value="CONTRACT_FIRST_ECOSYSTEM">Contract-First Ecosystem</option><option value="GOVERNED_PRIVATE_ENTERPRISE_BASELINE">Governed Private Enterprise Baseline</option>
+          </select>
+          <input id="suite-search" type="search" placeholder="Search suite, repo, technology, sponsor..." aria-label="Search product suites" />
+        </div>
+        <div id="filter-status" aria-live="polite">Showing 10 of 10 product suites</div>
+      </div>
+    </section>
+
+    <h2>Enterprise Product Suites (10 Canonical Suites)</h2>
+    <div class="grid" id="suites-grid">
+      <article class="card"
+        data-suite="suite-01"
+        data-domain="D1_AGENTIC_AI"
+        data-maturity="GOVERNED_PRIVATE_ENTERPRISE_BASELINE"
+        data-sponsor="ENTERPRISE_PLATFORM_GOVERNANCE"
+        data-standards="deterministic-sandwich,contract-first-governance,zero-trust-residency"
+        data-search-index="agentive enterprise architecture, governance &amp; cloud controls tier-1 financial institutions, enterprise architecture boards (eab) enterprise architecture &amp; ai governance autonomous togaf adm &amp; bdat multi-agent architecture platforms where governance and domain developer agents emit schema/zod-validated json inside deterministic java/typescript harnesses. java / spring boot typescript togaf adm / bdat dpop mcp / a2a / adk architecture-as-code agent = model + harness togaf adm cbuae / pci-dss v4 architecture-as-code ai-governance-framework architecture-as-code common-cloud-controls ai-agent-protocols fintechbankx-governance-architecture-enablement-adr-runbooks ea-agentive-platform-v3 x_bank-agentive-architecture-framework agentivearchitecturefw_v3 redbank-agentive-framework redbank-agentive-enterprise-architecture fintechbankx-governance-architecture-enablement-enterprise-architecture">
         <div>
-          <h3>1. OPF — Agentive Open Finance (BaaS)</h3>
-          <div class="target">Open Finance · BaaS · Temporal AI Workflows</div>
-          <p>
-            Agentive Translation Layer bridging Open Finance channels and incumbent core-banking constraints
-            via Temporal-orchestrated autonomous agents, Model Cascades (MoE), and pgvector semantic caching (&gt;80% inference bypass).
-          </p>
-          <div class="tags">
-            <span class="tag">Agentive BaaS</span><span class="tag">Temporal</span><span class="tag">pgvector</span><span class="tag">Model Cascades</span>
+          <div class="card-meta">
+            <span class="domain-chip">D1 · Agentic AI &amp; Governance</span>
+            <span class="maturity-badge">Governed Private Enterprise Baseline</span>
+          </div>
+          <h3>1. Agentive Enterprise Architecture, Governance &amp; Cloud Controls</h3>
+          <div class="sponsor-badge">Enterprise Architecture &amp; AI Governance</div>
+          
+          <p class="summary">Autonomous TOGAF ADM &amp; BDAT multi-agent architecture platforms where governance and domain developer agents emit schema/Zod-validated JSON inside deterministic Java/TypeScript harnesses.</p>
+          <div class="tags"><span class="tag">Agent = Model + Harness</span><span class="tag">TOGAF ADM</span><span class="tag">CBUAE / PCI-DSS v4</span><span class="tag">Architecture-as-Code</span></div>
+          <div class="proof-box">
+            <div class="proof-heading">Verifiable Proof &amp; Briefs</div>
+            <div class="proof-links"><a class="proof-link" href="https://github.com/COPUR/ai-governance-framework#readme" target="_blank" rel="noopener noreferrer"><span class="proof-type">Contracts &amp; Spec</span> AI Governance Framework Baseline</a><a class="proof-link" href="briefs/suite-01-agentive-ea.html"><span class="proof-type">C4 Architecture Brief</span> Deterministic Sandwich C4 Brief</a></div>
           </div>
         </div>
         <div class="repos">
-          <a href="https://github.com/COPUR/OPF-Agentive-Platform">OPF-Agentive-Platform</a>
-          <a href="https://github.com/COPUR/ai-agent-protocols">ai-agent-protocols</a>
-          <span class="private-note">V3/V4 regulated baselines maintained in private enterprise repos</span>
+          <div class="bucket"><a class="pill pill-public" href="https://github.com/COPUR/ai-governance-framework" target="_blank" rel="noopener noreferrer">ai-governance-framework</a><a class="pill pill-public" href="https://github.com/COPUR/architecture-as-code" target="_blank" rel="noopener noreferrer">architecture-as-code</a><a class="pill pill-public" href="https://github.com/COPUR/common-cloud-controls" target="_blank" rel="noopener noreferrer">common-cloud-controls</a><a class="pill pill-public" href="https://github.com/COPUR/ai-agent-protocols" target="_blank" rel="noopener noreferrer">ai-agent-protocols</a></div><div class="bucket"><a class="pill pill-crossref" href="https://github.com/COPUR/fintechbankx-governance-architecture-enablement-adr-runbooks" target="_blank" rel="noopener noreferrer">adr-runbooks <span class="xref">via Suite 6</span></a></div><div class="bucket"><span class="pill pill-private">EA-Agentive-Platform-v3 · Private</span><span class="pill pill-private">X_Bank-Agentive-Architecture-Framework · Private</span><span class="pill pill-private">AgentiveArchitectureFW_v3 · Private</span><span class="pill pill-private">redbank-agentive-framework · Private</span><span class="pill pill-private">redbank-agentive-enterprise-architecture · Private</span><span class="pill pill-private">fintechbankx-governance-architecture-enablement-enterprise-architecture · Private</span></div>
         </div>
       </article>
-
-      <article class="card">
+      <article class="card"
+        data-suite="suite-02"
+        data-domain="D1_AGENTIC_AI"
+        data-maturity="RUNNABLE_K8S_CLI_DEMO"
+        data-sponsor="ENTERPRISE_PLATFORM_GOVERNANCE"
+        data-standards="deterministic-sandwich,air-gapped-on-prem-ai"
+        data-search-index="jeff &amp; book-to-skill — on-prem ai tool-call firewall &amp; knowledge synthesis security-sensitive engineering teams, air-gapped ai environments on-premise ai control plane &amp; knowledge engineering self-hosted ai tool-call firewall (jeff) gating coding-agent pretooluse hooks on-prem via gliformer (400m) + local qwen escalation, paired with automated book-to-skill synthesis. python uv gliformer (400m) lm studio (qwen) pretooluse hooks gliformer 400m local qwen zero-egress python / uv jeff book-to-skill book-skills">
         <div>
-          <h3>2. Agentive Enterprise Architecture Frameworks</h3>
-          <div class="target">Regulated Banking · Deterministic Sandwich · TOGAF ADM</div>
-          <p>
-            Zero-trust AI-native architecture platforms where five governance agents and seven domain developer agents
-            emit schema/Zod-validated JSON inside deterministic Java/TypeScript harnesses (CBUAE 3/2025 &amp; PCI-DSS v4 aligned).
-          </p>
-          <div class="tags">
-            <span class="tag">Agent = Model + Harness</span><span class="tag">DPoP Gateway</span><span class="tag">Streaming DLP</span><span class="tag">BDAT</span>
+          <div class="card-meta">
+            <span class="domain-chip">D1 · Agentic AI &amp; Governance</span>
+            <span class="maturity-badge">Runnable K8s / CLI Demo</span>
+          </div>
+          <h3>2. Jeff &amp; Book-to-Skill — On-Prem AI Tool-Call Firewall &amp; Knowledge Synthesis</h3>
+          <div class="sponsor-badge">On-Premise AI Control Plane &amp; Knowledge Engineering</div>
+          
+          <p class="summary">Self-hosted AI tool-call firewall (Jeff) gating coding-agent PreToolUse hooks on-prem via GLiFormer (400M) + local Qwen escalation, paired with automated book-to-skill synthesis.</p>
+          <div class="tags"><span class="tag">GLiFormer 400M</span><span class="tag">Local Qwen</span><span class="tag">Zero-Egress</span><span class="tag">Python / uv</span></div>
+          <div class="proof-box">
+            <div class="proof-heading">Verifiable Proof &amp; Briefs</div>
+            <div class="proof-links"><a class="proof-link" href="https://github.com/COPUR/jeff#readme" target="_blank" rel="noopener noreferrer"><span class="proof-type">Quickstart</span> Jeff Self-Hosted GLiFormer Quickstart</a></div>
           </div>
         </div>
         <div class="repos">
-          <a href="https://github.com/COPUR/ai-governance-framework">ai-governance-framework</a>
-          <a href="https://github.com/COPUR/architecture-as-code">architecture-as-code</a>
-          <a href="https://github.com/COPUR/common-cloud-controls">common-cloud-controls</a>
-          <span class="private-note">EA-Agentive-Platform-v3 · X_Bank · RedBank frameworks (private)</span>
+          <div class="bucket"><a class="pill pill-public" href="https://github.com/COPUR/jeff" target="_blank" rel="noopener noreferrer">jeff</a></div><div class="bucket"><span class="pill pill-private">book-to-skill · Private</span><span class="pill pill-private">book-skills · Private</span></div>
         </div>
       </article>
-
-      <article class="card">
+      <article class="card"
+        data-suite="suite-03"
+        data-domain="D2_OPEN_FINANCE_CORE"
+        data-maturity="PUBLIC_REFERENCE_BASELINE"
+        data-sponsor="OPEN_FINANCE_CORE_BANKING"
+        data-standards="deterministic-sandwich,zero-trust-residency,air-gapped-on-prem-ai"
+        data-search-index="opf — agentive open finance (baas) platform open finance / baas platforms, incumbent core banks agentive open finance &amp; baas initiative acts as an agentive translation layer bridging open finance channels and legacy core-banking constraints via temporal-orchestrated agents, model cascades, and pgvector semantic caching. temporal.io pgvector model cascades (moe) java postgresql agentive baas temporal pgvector model cascades opf-agentive-platform ai-agent-protocols opf_agentive_platform_v4 opf-agentive-platform-v3">
         <div>
-          <h3>3. Jeff &amp; Book-to-Skill — On-Prem AI Governance</h3>
-          <div class="target">Air-Gapped Engineering · PreToolUse Policy Firewall</div>
-          <p>
-            Self-hosted drop-in replacement for TypeSafe's jev System One API powered by GLiFormer (400M) and
-            local Qwen escalation to gate coding-agent tool calls on-prem, paired with automated book-to-skill synthesis.
-          </p>
-          <div class="tags">
-            <span class="tag">GLiFormer 400M</span><span class="tag">Local Qwen</span><span class="tag">Python</span><span class="tag">Zero-Egress</span>
+          <div class="card-meta">
+            <span class="domain-chip">D2 · Open Finance &amp; Core Banking</span>
+            <span class="maturity-badge">Public Reference Baseline</span>
+          </div>
+          <h3>3. OPF — Agentive Open Finance (BaaS) Platform</h3>
+          <div class="sponsor-badge">Agentive Open Finance &amp; BaaS Initiative</div>
+          
+          <p class="summary">Acts as an Agentive Translation Layer bridging Open Finance channels and legacy core-banking constraints via Temporal-orchestrated agents, Model Cascades, and pgvector semantic caching.</p>
+          <div class="tags"><span class="tag">Agentive BaaS</span><span class="tag">Temporal</span><span class="tag">pgvector</span><span class="tag">Model Cascades</span></div>
+          <div class="proof-box">
+            <div class="proof-heading">Verifiable Proof &amp; Briefs</div>
+            <div class="proof-links"><a class="proof-link" href="https://github.com/COPUR/OPF-Agentive-Platform#readme" target="_blank" rel="noopener noreferrer"><span class="proof-type">Contracts &amp; Spec</span> OPF V2 Master Codex &amp; C4 Context</a><a class="proof-link" href="briefs/suite-03-opf-architecture.html"><span class="proof-type">C4 Architecture Brief</span> OPF Architecture &amp; Semantic Cache Brief</a></div>
           </div>
         </div>
         <div class="repos">
-          <a href="https://github.com/COPUR/jeff">jeff</a>
-          <span class="private-note">book-to-skill · book-skills knowledge library (private)</span>
+          <div class="bucket"><a class="pill pill-public" href="https://github.com/COPUR/OPF-Agentive-Platform" target="_blank" rel="noopener noreferrer">OPF-Agentive-Platform</a></div><div class="bucket"><a class="pill pill-crossref" href="https://github.com/COPUR/ai-agent-protocols" target="_blank" rel="noopener noreferrer">ai-agent-protocols <span class="xref">via Suite 1</span></a></div><div class="bucket"><span class="pill pill-private">OPF_Agentive_Platform_V4 · Private</span><span class="pill pill-private">OPF-Agentive-Platform-V3 · Private</span></div>
         </div>
       </article>
-
-      <article class="card">
+      <article class="card"
+        data-suite="suite-04"
+        data-domain="D2_OPEN_FINANCE_CORE"
+        data-maturity="RUNNABLE_K8S_CLI_DEMO"
+        data-sponsor="OPEN_FINANCE_CORE_BANKING"
+        data-standards="contract-first-governance,zero-trust-residency"
+        data-search-index="instant payment exception &amp; bpo orchestrator tier-1 banks, psps, tr bkm fast operations regulated payment operations orchestration turnkey camunda 8.10 bpmn/dmn orchestration for instant payment exceptions featuring pii-free workflow state, idempotent ledger capture, and per-provider oidc audience isolation. camunda 8.10 java 23 gradle keycloak 26.7 kubernetes / helm postgresql 17.6 camunda 8.10 java 23 keycloak oidc kubernetes demo-camunda-k8s neo-fintechbankx-bpo-process-orchestration camunda8-banking-poc">
         <div>
+          <div class="card-meta">
+            <span class="domain-chip">D2 · Open Finance &amp; Core Banking</span>
+            <span class="maturity-badge">Runnable K8s / CLI Demo</span>
+          </div>
           <h3>4. Instant Payment Exception &amp; BPO Orchestrator</h3>
-          <div class="target">Tier-1 Banks · PSPs · TR BKM FAST Operations</div>
-          <p>
-            Turnkey Camunda 8.10 orchestration for instant payment exceptions with PII-free workflow state (OutputVariables guardrail),
-            idempotent ledger capture, per-provider OIDC audience isolation, and one-command Kubernetes deployment.
-          </p>
-          <div class="tags">
-            <span class="tag">Camunda 8.10</span><span class="tag">Java 23</span><span class="tag">Keycloak OIDC</span><span class="tag">Kubernetes</span>
+          <div class="sponsor-badge">Regulated Payment Operations Orchestration</div>
+          
+          <p class="summary">Turnkey Camunda 8.10 BPMN/DMN orchestration for instant payment exceptions featuring PII-free workflow state, idempotent ledger capture, and per-provider OIDC audience isolation.</p>
+          <div class="tags"><span class="tag">Camunda 8.10</span><span class="tag">Java 23</span><span class="tag">Keycloak OIDC</span><span class="tag">Kubernetes</span></div>
+          <div class="proof-box">
+            <div class="proof-heading">Verifiable Proof &amp; Briefs</div>
+            <div class="proof-links"><a class="proof-link" href="https://github.com/COPUR/demo-camunda-k8s#h%C4%B1zl%C4%B1-ba%C5%9Flang%C4%B1%C3%A7" target="_blank" rel="noopener noreferrer"><span class="proof-type">Quickstart</span> One-Command Kubernetes Install &amp; UML</a></div>
           </div>
         </div>
         <div class="repos">
-          <a href="https://github.com/COPUR/demo-camunda-k8s">demo-camunda-k8s</a>
-          <a href="https://github.com/COPUR/neo-fintechbankx-bpo-process-orchestration">neo-fintechbankx-bpo</a>
-          <a href="https://github.com/COPUR/camunda8-banking-poc">camunda8-banking-poc</a>
+          <div class="bucket"><a class="pill pill-public" href="https://github.com/COPUR/demo-camunda-k8s" target="_blank" rel="noopener noreferrer">demo-camunda-k8s</a><a class="pill pill-public" href="https://github.com/COPUR/neo-fintechbankx-bpo-process-orchestration" target="_blank" rel="noopener noreferrer">neo-fintechbankx-bpo</a><a class="pill pill-public" href="https://github.com/COPUR/camunda8-banking-poc" target="_blank" rel="noopener noreferrer">camunda8-banking-poc</a></div>
         </div>
       </article>
-
-      <article class="card">
+      <article class="card"
+        data-suite="suite-05"
+        data-domain="D2_OPEN_FINANCE_CORE"
+        data-maturity="PUBLIC_REFERENCE_BASELINE"
+        data-sponsor="OPEN_FINANCE_CORE_BANKING"
+        data-standards="contract-first-governance,zero-trust-residency"
+        data-search-index="fintechbankx core lending, ledger, kyc &amp; masrufi retail, corporate &amp; islamic participation banks core banking, lending &amp; islamic finance domain-driven banking core unifying loan lifecycle management, double-entry accounts/ledger, customer kyc profiles, and sharia-compliant financing models (masrufi). java spring boot mongodb postgresql ddd / hexagonal loan lifecycle accounts &amp; ledger kyc core masrufi fintechbankx-lendingpayments-loan-lifecycle-core neo-fintechbankx-corebanking-accounts-ledger-service fintechbankx-customer-profile-kyc-core enterprise-loan-management-system masrufi_framework">
         <div>
-          <h3>5. FinTechBankX Core Lending, Ledger &amp; KYC</h3>
-          <div class="target">Retail &amp; Corporate Banks · Core Modernization</div>
-          <p>
-            Domain-driven core banking capabilities covering loan lifecycle, accounts &amp; ledger services,
-            customer KYC profiles, and Sharia-compliant financing models (MasruFi: Istisna, Ijarah, Qard Hassan).
-          </p>
-          <div class="tags">
-            <span class="tag">Java / Spring Boot</span><span class="tag">DDD</span><span class="tag">Hexagonal</span><span class="tag">Islamic Finance</span>
+          <div class="card-meta">
+            <span class="domain-chip">D2 · Open Finance &amp; Core Banking</span>
+            <span class="maturity-badge">Public Reference Baseline</span>
+          </div>
+          <h3>5. FinTechBankX Core Lending, Ledger, KYC &amp; MasruFi</h3>
+          <div class="sponsor-badge">Core Banking, Lending &amp; Islamic Finance</div>
+          
+          <p class="summary">Domain-driven banking core unifying loan lifecycle management, double-entry accounts/ledger, customer KYC profiles, and Sharia-compliant financing models (MasruFi).</p>
+          <div class="tags"><span class="tag">Loan Lifecycle</span><span class="tag">Accounts &amp; Ledger</span><span class="tag">KYC Core</span><span class="tag">MasruFi</span></div>
+          <div class="proof-box">
+            <div class="proof-heading">Verifiable Proof &amp; Briefs</div>
+            <div class="proof-links"><a class="proof-link" href="https://github.com/COPUR/fintechbankx-lendingpayments-loan-lifecycle-core" target="_blank" rel="noopener noreferrer"><span class="proof-type">Contracts &amp; Spec</span> Loan Lifecycle Core Repository</a><a class="proof-link" href="briefs/suite-05-masrufi-domain-model.html"><span class="proof-type">C4 Architecture Brief</span> FinTechBankX Core &amp; MasruFi Brief</a></div>
           </div>
         </div>
         <div class="repos">
-          <a href="https://github.com/COPUR/fintechbankx-lendingpayments-loan-lifecycle-core">loan-lifecycle-core</a>
-          <a href="https://github.com/COPUR/neo-fintechbankx-corebanking-accounts-ledger-service">accounts-ledger-service</a>
-          <a href="https://github.com/COPUR/fintechbankx-customer-profile-kyc-core">kyc-core</a>
-          <span class="private-note">enterprise-loan-management-system (private)</span>
+          <div class="bucket"><a class="pill pill-public" href="https://github.com/COPUR/fintechbankx-lendingpayments-loan-lifecycle-core" target="_blank" rel="noopener noreferrer">loan-lifecycle-core</a><a class="pill pill-public" href="https://github.com/COPUR/neo-fintechbankx-corebanking-accounts-ledger-service" target="_blank" rel="noopener noreferrer">accounts-ledger-service</a><a class="pill pill-public" href="https://github.com/COPUR/fintechbankx-customer-profile-kyc-core" target="_blank" rel="noopener noreferrer">kyc-core</a></div><div class="bucket"><span class="pill pill-private">enterprise-loan-management-system · Private</span><span class="pill pill-private">MasruFi_Framework · Private</span></div>
         </div>
       </article>
-
-      <article class="card">
+      <article class="card"
+        data-suite="suite-06"
+        data-domain="D2_OPEN_FINANCE_CORE"
+        data-maturity="PUBLIC_REFERENCE_BASELINE"
+        data-sponsor="ENTERPRISE_PLATFORM_GOVERNANCE"
+        data-standards="contract-first-governance,zero-trust-residency"
+        data-search-index="fintechbankx cloud platform, iac &amp; api governance platform engineering teams, api governance guilds enterprise platform &amp; api governance guild multi-wave cloud platform backbone delivering keycloak/ldap iam, terraform iac modules, ci/cd templates, service mesh security, kafka event streaming, adr runbooks, and openapi/asyncapi/schema catalogs. terraform kubernetes keycloak / ldap service mesh kafka openapi / asyncapi terraform kafka service mesh openapi / asyncapi fintechbankx-platform-identity-iam-keycloak-ldap fintechbankx-platform-delivery-iac-terraform-modules fintechbankx-platform-delivery-iac-cicd-templates fintechbankx-platform-mesh-security-service-mesh fintechbankx-platform-event-streaming-kafka fintechbankx-governance-api-contracts-openapi-catalog fintechbankx-governance-api-contracts-asyncapi-catalog fintechbankx-governance-api-contracts-schema-registry fintechbankx-governance-architecture-enablement-adr-runbooks fintechbankx-platform-observability-sre-operations">
         <div>
-          <h3>6. FinTechBankX Cloud Platform &amp; API Governance</h3>
-          <div class="target">Platform Engineering · API Governance Guild</div>
-          <p>
-            Enterprise platform foundation providing Keycloak/LDAP IAM, Terraform IaC modules, CI/CD templates,
-            Service Mesh security, Kafka event streaming, ADR runbooks, and OpenAPI/AsyncAPI/Schema catalogs.
-          </p>
-          <div class="tags">
-            <span class="tag">Terraform</span><span class="tag">Kafka</span><span class="tag">Service Mesh</span><span class="tag">OpenAPI / AsyncAPI</span>
+          <div class="card-meta">
+            <span class="domain-chip">D2 · Open Finance &amp; Core Banking</span>
+            <span class="maturity-badge">Public Reference Baseline</span>
+          </div>
+          <h3>6. FinTechBankX Cloud Platform, IaC &amp; API Governance</h3>
+          <div class="sponsor-badge">Enterprise Platform &amp; API Governance Guild</div>
+          
+          <p class="summary">Multi-wave cloud platform backbone delivering Keycloak/LDAP IAM, Terraform IaC modules, CI/CD templates, Service Mesh security, Kafka event streaming, ADR runbooks, and OpenAPI/AsyncAPI/Schema catalogs.</p>
+          <div class="tags"><span class="tag">Terraform</span><span class="tag">Kafka</span><span class="tag">Service Mesh</span><span class="tag">OpenAPI / AsyncAPI</span></div>
+          <div class="proof-box">
+            <div class="proof-heading">Verifiable Proof &amp; Briefs</div>
+            <div class="proof-links"><a class="proof-link" href="https://github.com/COPUR/fintechbankx-governance-api-contracts-openapi-catalog" target="_blank" rel="noopener noreferrer"><span class="proof-type">Contracts &amp; Spec</span> OpenAPI Governance Catalog</a></div>
           </div>
         </div>
         <div class="repos">
-          <a href="https://github.com/COPUR/fintechbankx-platform-identity-iam-keycloak-ldap">iam-keycloak</a>
-          <a href="https://github.com/COPUR/fintechbankx-platform-delivery-iac-terraform-modules">terraform-modules</a>
-          <a href="https://github.com/COPUR/fintechbankx-platform-mesh-security-service-mesh">service-mesh</a>
-          <a href="https://github.com/COPUR/fintechbankx-platform-event-streaming-kafka">kafka</a>
-          <a href="https://github.com/COPUR/fintechbankx-governance-api-contracts-openapi-catalog">openapi-catalog</a>
-          <a href="https://github.com/COPUR/fintechbankx-governance-api-contracts-asyncapi-catalog">asyncapi-catalog</a>
-          <a href="https://github.com/COPUR/fintechbankx-governance-api-contracts-schema-registry">schema-registry</a>
-          <a href="https://github.com/COPUR/fintechbankx-governance-architecture-enablement-adr-runbooks">adr-runbooks</a>
+          <div class="bucket"><a class="pill pill-public" href="https://github.com/COPUR/fintechbankx-platform-identity-iam-keycloak-ldap" target="_blank" rel="noopener noreferrer">iam-keycloak-ldap</a><a class="pill pill-public" href="https://github.com/COPUR/fintechbankx-platform-delivery-iac-terraform-modules" target="_blank" rel="noopener noreferrer">terraform-modules</a><a class="pill pill-public" href="https://github.com/COPUR/fintechbankx-platform-delivery-iac-cicd-templates" target="_blank" rel="noopener noreferrer">cicd-templates</a><a class="pill pill-public" href="https://github.com/COPUR/fintechbankx-platform-mesh-security-service-mesh" target="_blank" rel="noopener noreferrer">service-mesh</a><a class="pill pill-public" href="https://github.com/COPUR/fintechbankx-platform-event-streaming-kafka" target="_blank" rel="noopener noreferrer">event-streaming-kafka</a><a class="pill pill-public" href="https://github.com/COPUR/fintechbankx-governance-api-contracts-openapi-catalog" target="_blank" rel="noopener noreferrer">openapi-catalog</a><a class="pill pill-public" href="https://github.com/COPUR/fintechbankx-governance-api-contracts-asyncapi-catalog" target="_blank" rel="noopener noreferrer">asyncapi-catalog</a><a class="pill pill-public" href="https://github.com/COPUR/fintechbankx-governance-api-contracts-schema-registry" target="_blank" rel="noopener noreferrer">schema-registry</a><a class="pill pill-public" href="https://github.com/COPUR/fintechbankx-governance-architecture-enablement-adr-runbooks" target="_blank" rel="noopener noreferrer">adr-runbooks</a></div><div class="bucket"><span class="pill pill-private">fintechbankx-platform-observability-sre-operations · Private</span></div>
         </div>
       </article>
-
-      <article class="card">
+      <article class="card"
+        data-suite="suite-07"
+        data-domain="D3_EV_MOBILITY"
+        data-maturity="CONTRACT_FIRST_ECOSYSTEM"
+        data-sponsor="CENTRALIZED_REGULATOR"
+        data-standards="contract-first-governance,zero-trust-residency"
+        data-search-index="consent ev pnc — centralized regulator consent authority centralized regulator, government / neutral trust anchor sponsor: centralized regulator (government / neutral trust anchor) regulator-sponsored neutral plug &amp; charge consent authority managing consent catalogues, notices, grants, receipts, safeguards, data-subject rights, decisioning, and cross-ecosystem revocation propagation. openapi asyncapi json schema java / gradle contract testkit centralized regulator consent registry contract-first testkit ev_pnc_consent_contracts ev_pnc_consent_registry ev_pnc_consent_decision ev_pnc_consent_testkit ev_pnc_consent_docs">
         <div>
-          <h3>7. Consent EV PnC — Regulator Consent Authority</h3>
-          <div class="target">Centralized Regulator · Government / Neutral Trust Anchor</div>
-          <p>
-            Regulator-sponsored, neutral Plug &amp; Charge consent authority managing consent catalogues, notices,
-            grants, receipts, safeguards, data-subject rights, decisioning, and cross-ecosystem revocation propagation.
-          </p>
-          <div class="tags">
-            <span class="tag">Centralized Regulator</span><span class="tag">OpenAPI / AsyncAPI</span><span class="tag">Modular Monolith</span><span class="tag">Contract Tests</span>
+          <div class="card-meta">
+            <span class="domain-chip">D3 · EV Mobility &amp; Telemetry</span>
+            <span class="maturity-badge">Contract-First Ecosystem</span>
+          </div>
+          <h3>7. Consent EV PnC — Centralized Regulator Consent Authority</h3>
+          <div class="sponsor-badge sponsor-regulator">Sponsor: Centralized Regulator (Government / Neutral Trust Anchor)</div>
+          <p class="boundary-note">Neutral regulator-sponsored consent authority; strictly independent from Stakeholder Wallet PnC EV (Suite 8).</p>
+          <p class="summary">Regulator-sponsored neutral Plug &amp; Charge consent authority managing consent catalogues, notices, grants, receipts, safeguards, data-subject rights, decisioning, and cross-ecosystem revocation propagation.</p>
+          <div class="tags"><span class="tag">Centralized Regulator</span><span class="tag">Consent Registry</span><span class="tag">Contract-First</span><span class="tag">Testkit</span></div>
+          <div class="proof-box">
+            <div class="proof-heading">Verifiable Proof &amp; Briefs</div>
+            <div class="proof-links"><a class="proof-link" href="https://github.com/COPUR/EV_PnC_Consent_contracts#readme" target="_blank" rel="noopener noreferrer"><span class="proof-type">Contracts &amp; Spec</span> Regulator Consent OpenAPI/AsyncAPI SSOT</a><a class="proof-link" href="https://github.com/COPUR/EV_PnC_Consent_testkit" target="_blank" rel="noopener noreferrer"><span class="proof-type">Testkit / Simulator</span> Regulator Consent Conformance Testkit</a></div>
           </div>
         </div>
         <div class="repos">
-          <a href="https://github.com/COPUR/EV_PnC_Consent_contracts">contracts</a>
-          <a href="https://github.com/COPUR/EV_PnC_Consent_registry">registry</a>
-          <a href="https://github.com/COPUR/EV_PnC_Consent_decision">decision</a>
-          <a href="https://github.com/COPUR/EV_PnC_Consent_testkit">testkit</a>
-          <a href="https://github.com/COPUR/EV_PnC_Consent_docs">docs</a>
+          <div class="bucket"><a class="pill pill-public" href="https://github.com/COPUR/EV_PnC_Consent_contracts" target="_blank" rel="noopener noreferrer">contracts</a><a class="pill pill-public" href="https://github.com/COPUR/EV_PnC_Consent_registry" target="_blank" rel="noopener noreferrer">registry</a><a class="pill pill-public" href="https://github.com/COPUR/EV_PnC_Consent_decision" target="_blank" rel="noopener noreferrer">decision</a><a class="pill pill-public" href="https://github.com/COPUR/EV_PnC_Consent_testkit" target="_blank" rel="noopener noreferrer">testkit</a><a class="pill pill-public" href="https://github.com/COPUR/EV_PnC_Consent_docs" target="_blank" rel="noopener noreferrer">docs</a></div>
         </div>
       </article>
-
-      <article class="card">
+      <article class="card"
+        data-suite="suite-08"
+        data-domain="D3_EV_MOBILITY"
+        data-maturity="CONTRACT_FIRST_ECOSYSTEM"
+        data-sponsor="ECOSYSTEM_STAKEHOLDERS_FINTECH_CPO"
+        data-standards="contract-first-governance,zero-trust-residency"
+        data-search-index="wallet pnc ev — fintech &amp; cpo wallet + loyalty platform fintechs, charge point operators (cpos), emsps sponsor: ecosystem stakeholders (fintechs, cpos, emsps) stakeholder-sponsored plug &amp; charge wallet platform enabling any fintech or cpo to launch branded ev wallets with loyalty solutions, ocpi emsp adapters, hub gateway, telemetry, and pilot analytics. ocpi hub gateway python telemetry simulator infra modules fintech / cpo wallet loyalty ocpi emsp hub gateway ev_pnc_hub-gateway ev_pnc_hub-contracts ev_pnc_ocpi-emsp ev_pnc_ocpi-model ev_pnc_telemetry ev_pnc_pilot-analytics ev_pnc_simulator ev_pnc_infra-modules ev_pnc_docs">
         <div>
-          <h3>8. Wallet PnC EV — Fintech &amp; CPO Wallet Platform</h3>
-          <div class="target">Fintechs · CPOs · eMSPs · Loyalty &amp; Roaming Solutions</div>
-          <p>
-            Stakeholder-sponsored Plug &amp; Charge wallet platform enabling any Fintech or Charge Point Operator (CPO)
-            to launch branded EV wallets with loyalty solutions, OCPI roaming adapters, hub gateway, and pilot analytics.
-          </p>
-          <div class="tags">
-            <span class="tag">Fintech / CPO Wallet</span><span class="tag">Loyalty</span><span class="tag">OCPI eMSP</span><span class="tag">Hub Gateway</span>
+          <div class="card-meta">
+            <span class="domain-chip">D3 · EV Mobility &amp; Telemetry</span>
+            <span class="maturity-badge">Contract-First Ecosystem</span>
+          </div>
+          <h3>8. Wallet PnC EV — Fintech &amp; CPO Wallet + Loyalty Platform</h3>
+          <div class="sponsor-badge sponsor-stakeholder">Sponsor: Ecosystem Stakeholders (Fintechs, CPOs, eMSPs)</div>
+          <p class="boundary-note">Commercial stakeholder-sponsored wallet &amp; loyalty platform; strictly separate from Centralized Regulator Consent Authority (Suite 7).</p>
+          <p class="summary">Stakeholder-sponsored Plug &amp; Charge wallet platform enabling any Fintech or CPO to launch branded EV wallets with loyalty solutions, OCPI eMSP adapters, hub gateway, telemetry, and pilot analytics.</p>
+          <div class="tags"><span class="tag">Fintech / CPO Wallet</span><span class="tag">Loyalty</span><span class="tag">OCPI eMSP</span><span class="tag">Hub Gateway</span></div>
+          <div class="proof-box">
+            <div class="proof-heading">Verifiable Proof &amp; Briefs</div>
+            <div class="proof-links"><a class="proof-link" href="https://github.com/COPUR/EV_PNC_hub-contracts" target="_blank" rel="noopener noreferrer"><span class="proof-type">Contracts &amp; Spec</span> Wallet PnC Hub Contracts</a><a class="proof-link" href="https://github.com/COPUR/EV_PNC_simulator" target="_blank" rel="noopener noreferrer"><span class="proof-type">Testkit / Simulator</span> Wallet PnC EV Simulator</a></div>
           </div>
         </div>
         <div class="repos">
-          <a href="https://github.com/COPUR/EV_PNC_hub-gateway">hub-gateway</a>
-          <a href="https://github.com/COPUR/EV_PNC_hub-contracts">hub-contracts</a>
-          <a href="https://github.com/COPUR/EV_PNC_ocpi-emsp">ocpi-emsp</a>
-          <a href="https://github.com/COPUR/EV_PNC_ocpi-model">ocpi-model</a>
-          <a href="https://github.com/COPUR/EV_PNC_telemetry">telemetry</a>
-          <a href="https://github.com/COPUR/EV_PNC_pilot-analytics">pilot-analytics</a>
-          <a href="https://github.com/COPUR/EV_PNC_simulator">simulator</a>
-          <a href="https://github.com/COPUR/EV_PNC_infra-modules">infra-modules</a>
+          <div class="bucket"><a class="pill pill-public" href="https://github.com/COPUR/EV_PNC_hub-gateway" target="_blank" rel="noopener noreferrer">hub-gateway</a><a class="pill pill-public" href="https://github.com/COPUR/EV_PNC_hub-contracts" target="_blank" rel="noopener noreferrer">hub-contracts</a><a class="pill pill-public" href="https://github.com/COPUR/EV_PNC_ocpi-emsp" target="_blank" rel="noopener noreferrer">ocpi-emsp</a><a class="pill pill-public" href="https://github.com/COPUR/EV_PNC_ocpi-model" target="_blank" rel="noopener noreferrer">ocpi-model</a><a class="pill pill-public" href="https://github.com/COPUR/EV_PNC_telemetry" target="_blank" rel="noopener noreferrer">telemetry</a><a class="pill pill-public" href="https://github.com/COPUR/EV_PNC_pilot-analytics" target="_blank" rel="noopener noreferrer">pilot-analytics</a><a class="pill pill-public" href="https://github.com/COPUR/EV_PNC_simulator" target="_blank" rel="noopener noreferrer">simulator</a><a class="pill pill-public" href="https://github.com/COPUR/EV_PNC_infra-modules" target="_blank" rel="noopener noreferrer">infra-modules</a><a class="pill pill-public" href="https://github.com/COPUR/EV_PNC_docs" target="_blank" rel="noopener noreferrer">docs</a></div>
         </div>
       </article>
-
-      <article class="card">
+      <article class="card"
+        data-suite="suite-09"
+        data-domain="D3_EV_MOBILITY"
+        data-maturity="PUBLIC_REFERENCE_BASELINE"
+        data-sponsor="AUTOMOTIVE_RD_DRIVER_EXPERIENCE"
+        data-standards="deterministic-sandwich,zero-trust-residency"
+        data-search-index="ev telemetry, can &amp; driver companion automotive r&amp;d, vehicle diagnostics &amp; ev driver companion apps automotive r&amp;d &amp; driver experience combines public can bus exploration/fsd mod tooling, pre-delivery inspection mobile workflows (preflight_pdi), offline bench can simulation, and fleet telemetry driver intelligence (ev geek stats). can bus python / pytest ios &amp; android prisma tesla fleet telemetry can bus preflight pdi offline bench sim fleet telemetry tesla-can-mod tesla-fsd-can-mod tesla-open-can-mod preflight_pdi tesla-can-explorer-testing-only ev geek stats">
         <div>
-          <h3>9. EV Telemetry, CAN &amp; Serverless Platforms</h3>
-          <div class="target">Automotive R&amp;D · Multi-Tenant Serverless SaaS</div>
-          <p>
-            CAN bus exploration and open/FSD CAN tooling paired with controlled offline bench simulation,
-            EV delivery inspection (PreFlight PDI), and ADR-governed Go/AWS Serverless multi-tenant news platforms.
-          </p>
-          <div class="tags">
-            <span class="tag">CAN Bus</span><span class="tag">Go / AWS Serverless</span><span class="tag">Node.js 20+</span><span class="tag">Prisma</span>
+          <div class="card-meta">
+            <span class="domain-chip">D3 · EV Mobility &amp; Telemetry</span>
+            <span class="maturity-badge">Public Reference Baseline</span>
+          </div>
+          <h3>9. EV Telemetry, CAN &amp; Driver Companion</h3>
+          <div class="sponsor-badge">Automotive R&amp;D &amp; Driver Experience</div>
+          <p class="boundary-note">Dedicated automotive CAN bus, bench testing, and driver companion suite; decoupled from D4 Serverless News &amp; Observability.</p>
+          <p class="summary">Combines public CAN bus exploration/FSD mod tooling, Pre-Delivery Inspection mobile workflows (PreFlight_PDI), offline bench CAN simulation, and Fleet Telemetry driver intelligence (EV Geek Stats).</p>
+          <div class="tags"><span class="tag">CAN Bus</span><span class="tag">PreFlight PDI</span><span class="tag">Offline Bench Sim</span><span class="tag">Fleet Telemetry</span></div>
+          <div class="proof-box">
+            <div class="proof-heading">Verifiable Proof &amp; Briefs</div>
+            <div class="proof-links"><a class="proof-link" href="https://github.com/COPUR/PreFlight_PDI#readme" target="_blank" rel="noopener noreferrer"><span class="proof-type">Quickstart</span> PreFlight_PDI Mobile App README</a></div>
           </div>
         </div>
         <div class="repos">
-          <a href="https://github.com/COPUR/tesla-can-mod">tesla-can-mod</a>
-          <a href="https://github.com/COPUR/tesla-fsd-can-mod">tesla-fsd-can-mod</a>
-          <a href="https://github.com/COPUR/tesla-open-can-mod">tesla-open-can-mod</a>
-          <span class="private-note">daily-ev-news-serverless-go · tesla-can-explorer-testing-only (private)</span>
+          <div class="bucket"><a class="pill pill-public" href="https://github.com/COPUR/tesla-can-mod" target="_blank" rel="noopener noreferrer">tesla-can-mod</a><a class="pill pill-public" href="https://github.com/COPUR/tesla-fsd-can-mod" target="_blank" rel="noopener noreferrer">tesla-fsd-can-mod</a><a class="pill pill-public" href="https://github.com/COPUR/tesla-open-can-mod" target="_blank" rel="noopener noreferrer">tesla-open-can-mod</a><a class="pill pill-public" href="https://github.com/COPUR/PreFlight_PDI" target="_blank" rel="noopener noreferrer">PreFlight_PDI</a></div><div class="bucket"><span class="pill pill-private">tesla-can-explorer-testing-only · Private</span></div><div class="bucket"><span class="pill pill-design">EV Geek Stats · IN_DESIGN</span></div>
+        </div>
+      </article>
+      <article class="card"
+        data-suite="suite-10"
+        data-domain="D4_SERVERLESS_INTELLIGENCE"
+        data-maturity="GOVERNED_PRIVATE_ENTERPRISE_BASELINE"
+        data-sponsor="SERVERLESS_SAAS_RD"
+        data-standards="deterministic-sandwich,contract-first-governance,zero-trust-residency"
+        data-search-index="multi-tenant serverless news &amp; observability platform digital publishing platforms, event-driven saas engineering teams multi-tenant serverless saas platform adr-governed go/aws serverless multi-tenant news workflow engine with idempotent replay guards, paired with node.js 20+ local-first agents and a public standalone prisma/docker dashboard microservice. go aws serverless node.js 20+ typescript prisma docker go / aws serverless dashboard service node.js 20+ prisma dashboard-service daily-ev-news-serverless-go daily-ev-news-agent daily-news-agent">
+        <div>
+          <div class="card-meta">
+            <span class="domain-chip">D4 · Serverless Intelligence</span>
+            <span class="maturity-badge">Governed Private Enterprise Baseline</span>
+          </div>
+          <h3>10. Multi-Tenant Serverless News &amp; Observability Platform</h3>
+          <div class="sponsor-badge">Multi-Tenant Serverless SaaS Platform</div>
+          
+          <p class="summary">ADR-governed Go/AWS Serverless multi-tenant news workflow engine with idempotent replay guards, paired with Node.js 20+ local-first agents and a public standalone Prisma/Docker dashboard microservice.</p>
+          <div class="tags"><span class="tag">Go / AWS Serverless</span><span class="tag">Dashboard Service</span><span class="tag">Node.js 20+</span><span class="tag">Prisma</span></div>
+          <div class="proof-box">
+            <div class="proof-heading">Verifiable Proof &amp; Briefs</div>
+            <div class="proof-links"><a class="proof-link" href="https://github.com/COPUR/dashboard-service#readme" target="_blank" rel="noopener noreferrer"><span class="proof-type">Contracts &amp; Spec</span> Dashboard Microservice Repository</a><a class="proof-link" href="briefs/suite-10-serverless-c4.html"><span class="proof-type">C4 Architecture Brief</span> Serverless Multi-Tenant C4 Brief</a></div>
+          </div>
+        </div>
+        <div class="repos">
+          <div class="bucket"><a class="pill pill-public" href="https://github.com/COPUR/dashboard-service" target="_blank" rel="noopener noreferrer">dashboard-service</a></div><div class="bucket"><span class="pill pill-private">daily-ev-news-serverless-go · Private</span><span class="pill pill-private">daily-ev-news-agent · Private</span><span class="pill pill-private">daily-news-agent · Private</span></div>
         </div>
       </article>
     </div>
+    <div id="empty-state" hidden>No product suites match the selected domain, maturity tier, or search filter.</div>
+
+    <section id="standards-matrix" class="standards-section">
+      <h2>Enterprise Engineering Standards Across All Products</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Pillar</th>
+            <th>Implementation Standard</th>
+            <th>Applied Suites</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Deterministic Sandwich</strong></td><td>Agent = Model + Harness — LLMs produce schema-validated JSON only; deterministic code executes all side effects</td><td><code>Suite 1, Suite 2, Suite 3, Suite 9, Suite 10</code></td></tr><tr><td><strong>Contract-First Governance</strong></td><td>Single-source OpenAPI, AsyncAPI, and JSON Schema registries with consumer-driven contract tests</td><td><code>Suite 1, Suite 4, Suite 5, Suite 6, Suite 7, Suite 8, Suite 10</code></td></tr><tr><td><strong>Zero-Trust &amp; Residency</strong></td><td>Per-provider OIDC/DPoP scoping, restricted K8s Pod Security, default-deny NetworkPolicy, CBUAE/PCI-DSS v4 alignment</td><td><code>Suite 1, Suite 3, Suite 4, Suite 5, Suite 6, Suite 7, Suite 8, Suite 9, Suite 10</code></td></tr><tr><td><strong>Air-Gapped / On-Prem AI</strong></td><td>Local SLM/LLM inference and policy gating (GLiFormer, local Qwen, pgvector semantic caching) with zero external egress</td><td><code>Suite 2, Suite 3</code></td></tr>
+        </tbody>
+      </table>
+    </section>
 
     <footer>
-      Maintained via automated contract &amp; secret-hygiene verification · @COPUR
+      Generated deterministically from SSOT catalog · Revision 2026-11-17.1 · @COPUR
     </footer>
   </div>
+
+  <script>
+    (function () {
+      var ALLOWED_DOMAINS = {"ALL": true, "D1_AGENTIC_AI": true, "D2_OPEN_FINANCE_CORE": true, "D3_EV_MOBILITY": true, "D4_SERVERLESS_INTELLIGENCE": true};
+      var ALLOWED_MATURITIES = {"ALL": true, "RUNNABLE_K8S_CLI_DEMO": true, "PUBLIC_REFERENCE_BASELINE": true, "CONTRACT_FIRST_ECOSYSTEM": true, "GOVERNED_PRIVATE_ENTERPRISE_BASELINE": true};
+
+      var activeDomain = "ALL";
+      var activeMaturity = "ALL";
+      var activeQuery = "";
+
+      var cards = Array.prototype.slice.call(document.querySelectorAll("#suites-grid .card"));
+      var buttons = Array.prototype.slice.call(document.querySelectorAll("[data-domain-filter]"));
+      var maturitySelect = document.getElementById("maturity-filter");
+      var searchInput = document.getElementById("suite-search");
+      var statusEl = document.getElementById("filter-status");
+      var emptyEl = document.getElementById("empty-state");
+
+      function applyFilters() {
+        var visible = 0;
+        var q = activeQuery.trim().toLowerCase();
+        cards.forEach(function (card) {
+          var dOk = activeDomain === "ALL" || card.dataset.domain === activeDomain;
+          var mOk = activeMaturity === "ALL" || card.dataset.maturity === activeMaturity;
+          var sOk = q === "" || (card.dataset.searchIndex || "").indexOf(q) !== -1;
+          var match = dOk && mOk && sOk;
+          card.hidden = !match;
+          card.classList.toggle("is-hidden", !match);
+          if (match) visible += 1;
+        });
+        statusEl.textContent = "Showing " + visible + " of " + cards.length + " product suites";
+        emptyEl.hidden = visible > 0;
+      }
+
+      function setActiveDomain(domainId) {
+        activeDomain = ALLOWED_DOMAINS[domainId] ? domainId : "ALL";
+        buttons.forEach(function (btn) {
+          var selected = btn.dataset.domainFilter === activeDomain;
+          btn.classList.toggle("is-active", selected);
+          btn.setAttribute("aria-pressed", selected ? "true" : "false");
+        });
+        applyFilters();
+      }
+
+      buttons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          setActiveDomain(btn.dataset.domainFilter || "ALL");
+        });
+      });
+
+      if (maturitySelect) {
+        maturitySelect.addEventListener("change", function () {
+          var val = maturitySelect.value || "ALL";
+          activeMaturity = ALLOWED_MATURITIES[val] ? val : "ALL";
+          applyFilters();
+        });
+      }
+
+      if (searchInput) {
+        searchInput.addEventListener("input", function () {
+          activeQuery = searchInput.value || "";
+          applyFilters();
+        });
+      }
+
+      try {
+        var params = new URLSearchParams(window.location.search);
+        var qDom = params.get("domain");
+        var qMat = params.get("maturity");
+        if (qMat && ALLOWED_MATURITIES[qMat]) {
+          activeMaturity = qMat;
+          if (maturitySelect) maturitySelect.value = qMat;
+        }
+        if (qDom && ALLOWED_DOMAINS[qDom]) {
+          setActiveDomain(qDom);
+        } else {
+          applyFilters();
+        }
+      } catch (e) {
+        applyFilters();
+      }
+    })();
+  </script>
 </body>
 </html>
