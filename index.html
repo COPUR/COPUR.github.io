@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ali Çopur (@COPUR) — Enterprise Product Suites</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --surface: #121933;
+      --border: #232d54;
+      --text: #e6ebf5;
+      --muted: #9aa7c7;
+      --accent: #5b8cff;
+      --accent-soft: rgba(91, 140, 255, 0.12);
+      --green: #3ddc97;
+      --amber: #f5b942;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 2.5rem 1.25rem;
+    }
+    .container { max-width: 1160px; margin: 0 auto; }
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 2rem;
+      margin-bottom: 2.5rem;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid rgba(91, 140, 255, 0.35);
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 0.9rem;
+    }
+    h1 { font-size: 2.2rem; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+    .subtitle { color: var(--muted); font-size: 1.05rem; max-width: 820px; }
+    .links { margin-top: 1.2rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+    .links a {
+      color: var(--text);
+      text-decoration: none;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.45rem 0.9rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+    }
+    .links a:hover { border-color: var(--accent); }
+    h2 { font-size: 1.45rem; margin: 2.2rem 0 1rem; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+      gap: 1.25rem;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card h3 { font-size: 1.1rem; margin-bottom: 0.35rem; color: #fff; }
+    .target { font-size: 0.82rem; color: var(--green); margin-bottom: 0.75rem; font-weight: 500; }
+    .card p { color: var(--muted); font-size: 0.92rem; margin-bottom: 1rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.9rem; }
+    .tag {
+      font-size: 0.75rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      padding: 0.15rem 0.5rem;
+      border-radius: 6px;
+      color: var(--muted);
+    }
+    .repos { font-size: 0.84rem; border-top: 1px solid var(--border); padding-top: 0.75rem; }
+    .repos a { color: var(--accent); text-decoration: none; margin-right: 0.65rem; display: inline-block; margin-bottom: 0.25rem; }
+    .repos a:hover { text-decoration: underline; }
+    .private-note { color: var(--amber); font-size: 0.78rem; display: block; margin-top: 0.3rem; }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.85rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span class="badge">Enterprise Software Architect &amp; Product Engineering Leader</span>
+      <h1>Ali Çopur (@COPUR)</h1>
+      <p class="subtitle">
+        Enterprise-grade software product suites across Agentic AI-Driven Enterprise Architecture,
+        Agentic Open Finance (BaaS), Core Banking &amp; Process Orchestration (Camunda 8.10), and EV Roaming &amp; Mobility.
+      </p>
+      <div class="links">
+        <a href="https://github.com/COPUR">GitHub Profile</a>
+        <a href="https://github.com/COPUR/COPUR/blob/main/PROJECTS.md">Full Product Catalog</a>
+      </div>
+    </header>
+
+    <h2>Enterprise Product Suites</h2>
+    <div class="grid">
+      <article class="card">
+        <div>
+          <h3>1. OPF — Agentive Open Finance (BaaS)</h3>
+          <div class="target">Open Finance · BaaS · Temporal AI Workflows</div>
+          <p>
+            Agentive Translation Layer bridging Open Finance channels and incumbent core-banking constraints
+            via Temporal-orchestrated autonomous agents, Model Cascades (MoE), and pgvector semantic caching (&gt;80% inference bypass).
+          </p>
+          <div class="tags">
+            <span class="tag">Agentive BaaS</span><span class="tag">Temporal</span><span class="tag">pgvector</span><span class="tag">Model Cascades</span>
+          </div>
+        </div>
+        <div class="repos">
+          <a href="https://github.com/COPUR/OPF-Agentive-Platform">OPF-Agentive-Platform</a>
+          <a href="https://github.com/COPUR/ai-agent-protocols">ai-agent-protocols</a>
+          <span class="private-note">V3/V4 regulated baselines maintained in private enterprise repos</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div>
+          <h3>2. Agentive Enterprise Architecture Frameworks</h3>
+          <div class="target">Regulated Banking · Deterministic Sandwich · TOGAF ADM</div>
+          <p>
+            Zero-trust AI-native architecture platforms where five governance agents and seven domain developer agents
+            emit schema/Zod-validated JSON inside deterministic Java/TypeScript harnesses (CBUAE 3/2025 &amp; PCI-DSS v4 aligned).
+          </p>
+          <div class="tags">
+            <span class="tag">Agent = Model + Harness</span><span class="tag">DPoP Gateway</span><span class="tag">Streaming DLP</span><span class="tag">BDAT</span>
+          </div>
+        </div>
+        <div class="repos">
+          <a href="https://github.com/COPUR/ai-governance-framework">ai-governance-framework</a>
+          <a href="https://github.com/COPUR/architecture-as-code">architecture-as-code</a>
+          <a href="https://github.com/COPUR/common-cloud-controls">common-cloud-controls</a>
+          <span class="private-note">EA-Agentive-Platform-v3 · X_Bank · RedBank frameworks (private)</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div>
+          <h3>3. Jeff &amp; Book-to-Skill — On-Prem AI Governance</h3>
+          <div class="target">Air-Gapped Engineering · PreToolUse Policy Firewall</div>
+          <p>
+            Self-hosted drop-in replacement for TypeSafe's jev System One API powered by GLiFormer (400M) and
+            local Qwen escalation to gate coding-agent tool calls on-prem, paired with automated book-to-skill synthesis.
+          </p>
+          <div class="tags">
+            <span class="tag">GLiFormer 400M</span><span class="tag">Local Qwen</span><span class="tag">Python</span><span class="tag">Zero-Egress</span>
+          </div>
+        </div>
+        <div class="repos">
+          <a href="https://github.com/COPUR/jeff">jeff</a>
+          <span class="private-note">book-to-skill · book-skills knowledge library (private)</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div>
+          <h3>4. Instant Payment Exception &amp; BPO Orchestrator</h3>
+          <div class="target">Tier-1 Banks · PSPs · TR BKM FAST Operations</div>
+          <p>
+            Turnkey Camunda 8.10 orchestration for instant payment exceptions with PII-free workflow state (OutputVariables guardrail),
+            idempotent ledger capture, per-provider OIDC audience isolation, and one-command Kubernetes deployment.
+          </p>
+          <div class="tags">
+            <span class="tag">Camunda 8.10</span><span class="tag">Java 23</span><span class="tag">Keycloak OIDC</span><span class="tag">Kubernetes</span>
+          </div>
+        </div>
+        <div class="repos">
+          <a href="https://github.com/COPUR/demo-camunda-k8s">demo-camunda-k8s</a>
+          <a href="https://github.com/COPUR/neo-fintechbankx-bpo-process-orchestration">neo-fintechbankx-bpo</a>
+          <a href="https://github.com/COPUR/camunda8-banking-poc">camunda8-banking-poc</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div>
+          <h3>5. FinTechBankX Core Lending, Ledger &amp; KYC</h3>
+          <div class="target">Retail &amp; Corporate Banks · Core Modernization</div>
+          <p>
+            Domain-driven core banking capabilities covering loan lifecycle, accounts &amp; ledger services,
+            customer KYC profiles, and Sharia-compliant financing models (MasruFi: Istisna, Ijarah, Qard Hassan).
+          </p>
+          <div class="tags">
+            <span class="tag">Java / Spring Boot</span><span class="tag">DDD</span><span class="tag">Hexagonal</span><span class="tag">Islamic Finance</span>
+          </div>
+        </div>
+        <div class="repos">
+          <a href="https://github.com/COPUR/fintechbankx-lendingpayments-loan-lifecycle-core">loan-lifecycle-core</a>
+          <a href="https://github.com/COPUR/neo-fintechbankx-corebanking-accounts-ledger-service">accounts-ledger-service</a>
+          <a href="https://github.com/COPUR/fintechbankx-customer-profile-kyc-core">kyc-core</a>
+          <span class="private-note">enterprise-loan-management-system (private)</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div>
+          <h3>6. FinTechBankX Cloud Platform &amp; API Governance</h3>
+          <div class="target">Platform Engineering · API Governance Guild</div>
+          <p>
+            Enterprise platform foundation providing Keycloak/LDAP IAM, Terraform IaC modules, CI/CD templates,
+            Service Mesh security, Kafka event streaming, ADR runbooks, and OpenAPI/AsyncAPI/Schema catalogs.
+          </p>
+          <div class="tags">
+            <span class="tag">Terraform</span><span class="tag">Kafka</span><span class="tag">Service Mesh</span><span class="tag">OpenAPI / AsyncAPI</span>
+          </div>
+        </div>
+        <div class="repos">
+          <a href="https://github.com/COPUR/fintechbankx-platform-identity-iam-keycloak-ldap">iam-keycloak</a>
+          <a href="https://github.com/COPUR/fintechbankx-platform-delivery-iac-terraform-modules">terraform-modules</a>
+          <a href="https://github.com/COPUR/fintechbankx-platform-mesh-security-service-mesh">service-mesh</a>
+          <a href="https://github.com/COPUR/fintechbankx-platform-event-streaming-kafka">kafka</a>
+          <a href="https://github.com/COPUR/fintechbankx-governance-api-contracts-openapi-catalog">openapi-catalog</a>
+          <a href="https://github.com/COPUR/fintechbankx-governance-api-contracts-asyncapi-catalog">asyncapi-catalog</a>
+          <a href="https://github.com/COPUR/fintechbankx-governance-api-contracts-schema-registry">schema-registry</a>
+          <a href="https://github.com/COPUR/fintechbankx-governance-architecture-enablement-adr-runbooks">adr-runbooks</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div>
+          <h3>7. EV PnC Consent &amp; Roaming Governance</h3>
+          <div class="target">CPOs · eMSPs · Plug &amp; Charge Roaming Hubs</div>
+          <p>
+            Full-stack Plug &amp; Charge roaming consent ecosystem: contract-first OpenAPI/AsyncAPI/JSON Schema authority,
+            modular monolith registry, decision engine, OCPI eMSP adapters, hub gateway, telemetry, analytics, and simulator.
+          </p>
+          <div class="tags">
+            <span class="tag">OpenAPI / AsyncAPI</span><span class="tag">OCPI</span><span class="tag">Contract Tests</span><span class="tag">Telemetry</span>
+          </div>
+        </div>
+        <div class="repos">
+          <a href="https://github.com/COPUR/EV_PnC_Consent_contracts">contracts</a>
+          <a href="https://github.com/COPUR/EV_PnC_Consent_registry">registry</a>
+          <a href="https://github.com/COPUR/EV_PnC_Consent_decision">decision</a>
+          <a href="https://github.com/COPUR/EV_PnC_Consent_testkit">testkit</a>
+          <a href="https://github.com/COPUR/EV_PNC_hub-gateway">hub-gateway</a>
+          <a href="https://github.com/COPUR/EV_PNC_ocpi-emsp">ocpi-emsp</a>
+          <a href="https://github.com/COPUR/EV_PNC_ocpi-model">ocpi-model</a>
+          <a href="https://github.com/COPUR/EV_PNC_telemetry">telemetry</a>
+          <a href="https://github.com/COPUR/EV_PNC_pilot-analytics">pilot-analytics</a>
+          <a href="https://github.com/COPUR/EV_PNC_simulator">simulator</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div>
+          <h3>8. EV Telemetry, CAN &amp; Serverless Platforms</h3>
+          <div class="target">Automotive R&amp;D · Multi-Tenant Serverless SaaS</div>
+          <p>
+            CAN bus exploration and open/FSD CAN tooling paired with controlled offline bench simulation,
+            EV delivery inspection (PreFlight PDI), and ADR-governed Go/AWS Serverless multi-tenant news platforms.
+          </p>
+          <div class="tags">
+            <span class="tag">CAN Bus</span><span class="tag">Go / AWS Serverless</span><span class="tag">Node.js 20+</span><span class="tag">Prisma</span>
+          </div>
+        </div>
+        <div class="repos">
+          <a href="https://github.com/COPUR/tesla-can-mod">tesla-can-mod</a>
+          <a href="https://github.com/COPUR/tesla-fsd-can-mod">tesla-fsd-can-mod</a>
+          <a href="https://github.com/COPUR/tesla-open-can-mod">tesla-open-can-mod</a>
+          <span class="private-note">daily-ev-news-serverless-go · tesla-can-explorer-testing-only (private)</span>
+        </div>
+      </article>
+    </div>
+
+    <footer>
+      Maintained via automated contract &amp; secret-hygiene verification · @COPUR
+    </footer>
+  </div>
+</body>
+</html>
